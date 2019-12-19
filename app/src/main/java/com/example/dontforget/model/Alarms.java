@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Alarms<T extends Alarm> implements IDataSet<T> {
-    List<T> alarms;
+    List<T> alarmsList;
 
     public Alarms() {
-        alarms = new ArrayList<>();
+        alarmsList = new ArrayList<>();
     }
 
-    public Alarms(List<T> alarms) {
-        this.alarms = alarms;
+    public Alarms(List<T> alarmsList) {
+        this.alarmsList = alarmsList;
     }
 
     @Override
     public T getById(long id) {
-        for (T item : alarms) {
+        for (T item : alarmsList) {
             if (id == item.id)
                 return item;
         }
@@ -24,8 +24,8 @@ public class Alarms<T extends Alarm> implements IDataSet<T> {
     }
 
     public int searchById(long id) {
-        for (int i = 0; i < alarms.size(); i++) {
-            if (id == alarms.get(i).id)
+        for (int i = 0; i < alarmsList.size(); i++) {
+            if (id == alarmsList.get(i).id)
                 return i;
         }
         return -1;
@@ -37,7 +37,7 @@ public class Alarms<T extends Alarm> implements IDataSet<T> {
         if (-1 == existingItemIdx)
             return;
 
-        alarms.set(existingItemIdx, item);
+        alarmsList.set(existingItemIdx, item);
     }
 
     @Override
@@ -46,17 +46,17 @@ public class Alarms<T extends Alarm> implements IDataSet<T> {
         if (-1 == existingItemIdx)
             return;
 
-        alarms.remove(existingItemIdx);
+        alarmsList.remove(existingItemIdx);
     }
 
     @Override
     public void add(T item) {
-        alarms.add(item);
+        alarmsList.add(item);
     }
 
     @Override
     public List<T> getList() {
-        return alarms;
+        return alarmsList;
     }
 
     @Override
