@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+/**
+ * Shows card's fields: caption and description
+ * Also contains two control buttons: cancel and create
+ */
 public class CreatingCardActivity extends AppCompatActivity {
 
     @Override
