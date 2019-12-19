@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Don\'t Forget</string>
+    <string name="buttonAdd">Add</string>
 </resources>
