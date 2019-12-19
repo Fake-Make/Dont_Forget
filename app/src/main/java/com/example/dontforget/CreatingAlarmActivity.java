@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+/**
+ * Shows alarm's fields: caption prev- and next-date, time
+ * Also contains two control buttons: cancel and create
+ */
 public class CreatingAlarmActivity extends AppCompatActivity {
 
     @Override
