@@ -4,6 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+/**
+ * Detailed card's page
+ * Contains caption, description and list of alarms
+ * Also contains button to create new alarm
+ */
 public class CardActivity extends AppCompatActivity {
 
     @Override
