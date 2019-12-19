@@ -7,8 +7,9 @@ public interface IDataSet<T> {
     void updateById(long id, T item);
     void deleteById(long id);
     void add(T item);
+    boolean isEmpty();
     List<T> getList();
 
     void save();
-    void load();
+    boolean load();
 }
