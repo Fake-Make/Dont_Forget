@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dontforget.adapters.CardsListAdapter;
@@ -17,6 +18,10 @@ public class MainPresenter extends APresenter implements IPresenter {
 
     public void showCards(RecyclerView recyclerView) {
         recyclerView.setHasFixedSize(true);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(parent);
+        recyclerView.setLayoutManager(layoutManager);
+
         recyclerView.setAdapter(new CardsListAdapter(cardsList.getList()));
     }
 
