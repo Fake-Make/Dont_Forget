@@ -45,10 +45,8 @@ public class CardsListAdapter extends RecyclerView.Adapter<CardsListAdapter.Card
     public void onBindViewHolder(@NonNull CardsListAdapter.CardViewHolder holder, int position) {
         Card currentCard = cardsList.get(position);
 
-        TextView caption = (TextView) holder.view.findViewById(R.id.cardListItemCaption);
-        TextView description = (TextView) holder.view.findViewById(R.id.cardListItemDescription);
-        caption.setText(currentCard.getCaption());
-        description.setText(currentCard.getDescription());
+        ((TextView) holder.view.findViewById(R.id.cardListItemCaption)).setText(currentCard.getCaption());
+        ((TextView) holder.view.findViewById(R.id.cardListItemDescription)).setText(currentCard.getDescription());
     }
 
     @Override
