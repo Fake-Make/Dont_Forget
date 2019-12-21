@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Don\'t Forget</string>
     <string name="buttonAdd">Add</string>
+    <string name="emptinessMessageText">There is nothing to show!\nYou can add item with button below.</string>
 </resources>
