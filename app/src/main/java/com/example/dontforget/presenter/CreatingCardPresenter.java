@@ -10,6 +10,7 @@ public class CreatingCardPresenter extends APresenter implements IPresenter {
     protected String caption, description;
 
     public CreatingCardPresenter(Context context) {
+        parent = context;
         cardsList = new Cards<>(getFile(context));
     }
 

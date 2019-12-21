@@ -11,6 +11,7 @@ import com.example.dontforget.model.Cards;
 
 public class MainPresenter extends APresenter implements IPresenter {
     public MainPresenter(Context context) {
+        parent = context;
         cardsList = new Cards<>(getFile(context));
     }
 
