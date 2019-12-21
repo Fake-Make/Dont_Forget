@@ -34,4 +34,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Init view with required data
+        MainPresenter presenter = new MainPresenter(MainActivity.this);
+        presenter.switchEmptinessMessage((TextView) findViewById(R.id.emptinessMessage));
+        presenter.showCards((RecyclerView) findViewById(R.id.cardsList));
+    }
 }
