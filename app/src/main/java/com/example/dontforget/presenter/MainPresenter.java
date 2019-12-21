@@ -1,5 +1,6 @@
 package com.example.dontforget.presenter;
 
+import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
 
@@ -9,8 +10,8 @@ import com.example.dontforget.adapters.CardsListAdapter;
 import com.example.dontforget.model.Cards;
 
 public class MainPresenter extends APresenter implements IPresenter {
-    public MainPresenter() {
-        cardsList = new Cards<>();
+    public MainPresenter(Context context) {
+        cardsList = new Cards<>(getFile(context));
     }
 
     public void showCards(RecyclerView recyclerView) {
