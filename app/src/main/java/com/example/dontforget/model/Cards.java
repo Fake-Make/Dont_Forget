@@ -1,5 +1,11 @@
 package com.example.dontforget.model;
 
+import android.app.Application;
+import android.content.Context;
+import android.widget.Toast;
+
+import com.example.dontforget.MainActivity;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -14,15 +20,27 @@ public class Cards<T extends Card> extends ADataSet<T> implements IDataSet<T> {
     private File file;
     private final String fileNameToOpen = "dont_forget.db";
 
-    public Cards() {
+    public Cards(File file) {
         itemsList = new ArrayList<>();
-        file = new File(fileNameToOpen);
+
+        this.file = new File(file, fileNameToOpen);
+        try {
+            this.file.createNewFile();
+        } catch (IOException e) {
+            e.getStackTrace();
+        }
         load();
     }
 
-    public Cards(List<T> cardsList) {
+    public Cards(File file, List<T> cardsList) {
         itemsList = cardsList;
-        file = new File(fileNameToOpen);
+
+        this.file = new File(file, fileNameToOpen);
+        try {
+            this.file.createNewFile();
+        } catch (IOException e) {
+            e.getStackTrace();
+        }
         save();
     }
 
