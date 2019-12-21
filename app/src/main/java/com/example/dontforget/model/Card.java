@@ -10,7 +10,7 @@ public class Card implements ICard, IUniqueItem, Serializable {
 
     public Card(String caption, String description) {
         this.caption = caption;
-        this.description = description;
+        this.description = null != description && 0 < description.length() ? description : "No description.";
         id = System.currentTimeMillis();
     }
 
