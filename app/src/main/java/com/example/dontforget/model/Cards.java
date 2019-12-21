@@ -58,7 +58,9 @@ public class Cards<T extends Card> extends ADataSet<T> implements IDataSet<T> {
     @Override
     public boolean load() {
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(file))) {
-            itemsList = (List<T>) in.readObject();
+            List<T> itemsListTemp = (List<T>) in.readObject();
+            if (0 < itemsListTemp.size())
+                itemsList = itemsListTemp;
             return true;
         } catch (FileNotFoundException e) {
             e.getStackTrace();
