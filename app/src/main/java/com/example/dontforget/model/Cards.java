@@ -13,27 +13,22 @@ import java.util.List;
 public class Cards<T extends Card> extends ADataSet<T> implements IDataSet<T> {
     private File file;
     private final String fileNameToOpen = "dont_forget.db";
-    private File openFile() {
-
-
-        return null;
-    }
 
     public Cards() {
         itemsList = new ArrayList<>();
-        file = openFile();
+        file = new File(fileNameToOpen);
         load();
     }
 
     public Cards(List<T> cardsList) {
         itemsList = cardsList;
+        file = new File(fileNameToOpen);
         save();
     }
 
     @Override
     public void updateById(long id, T item) {
         super.updateById(id, item);
-        file = openFile();
         save();
     }
 
