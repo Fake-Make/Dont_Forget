@@ -9,10 +9,10 @@ public class Alarm implements IAlarm, IUniqueItem, Serializable {
     protected long nextAlarm, interval;
     protected long id;
 
-    public Alarm(Calendar lastDate, Calendar nextDate, String time) {
+    public Alarm(long lastDate, long nextDate, long time) {
+        interval = nextDate - lastDate;
+        nextAlarm = nextDate + time;
         id = System.currentTimeMillis();
-        // nextAlarm = nextDate + time;
-        // interval = nextAlarm - lastDate;
     }
 
     public String getCaption() {
