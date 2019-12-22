@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Init view with required data
         MainPresenter presenter = new MainPresenter(MainActivity.this);
-        presenter.switchEmptinessMessage((TextView) findViewById(R.id.emptinessMessage));
+        presenter.switchEmptinessMessage((TextView) findViewById(R.id.emptinessMessageCards));
         presenter.showCards((RecyclerView) findViewById(R.id.cardsList));
 
         // Go to "Create new card" activity
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         // Init view with required data
         MainPresenter presenter = new MainPresenter(MainActivity.this);
-        presenter.switchEmptinessMessage((TextView) findViewById(R.id.emptinessMessage));
+        presenter.switchEmptinessMessage((TextView) findViewById(R.id.emptinessMessageCards));
         presenter.showCards((RecyclerView) findViewById(R.id.cardsList));
     }
 }
