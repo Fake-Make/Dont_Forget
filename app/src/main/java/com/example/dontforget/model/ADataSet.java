@@ -1,8 +1,9 @@
 package com.example.dontforget.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-abstract public class ADataSet<T extends IUniqueItem> implements IDataSet<T> {
+abstract public class ADataSet<T extends IUniqueItem> implements IDataSet<T>, Serializable {
     List<T> itemsList;
 
     @Override
