@@ -1,5 +1,12 @@
 package com.example.dontforget.model;
 
+import android.content.Context;
+
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+
+import com.example.dontforget.R;
+
 import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -23,9 +30,6 @@ public class Alarm implements IAlarm, IUniqueItem, Serializable {
         // Fix nextAlarm if it has past time
         long now = System.currentTimeMillis();
         for (; nextAlarm < now; nextAlarm += interval);
-
-        // Starting service with notifications
-        startAlarm();
     }
 
     public String getDatetime() {
@@ -57,5 +61,16 @@ public class Alarm implements IAlarm, IUniqueItem, Serializable {
         // Change next alarm time
         nextAlarm += interval;
 
+        // Create notification
+        NotificationCompat.Builder builder =
+                new NotificationCompat.Builder(context, String.valueOf(R.string.app_name))
+                        .setSmallIcon(R.mipmap.ic_launcher)
+                        .setContentTitle(String.valueOf(R.string.app_name))
+                        .setContentText(caption)
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+        NotificationManagerCompat notificationManager =
+                NotificationManagerCompat.from(context);
+        notificationManager.notify((int) id, builder.build());
     }
 }
