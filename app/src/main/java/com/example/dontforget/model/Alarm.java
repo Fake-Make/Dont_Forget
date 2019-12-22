@@ -49,7 +49,13 @@ public class Alarm implements IAlarm, IUniqueItem, Serializable {
         this.id = id;
     }
 
-    public void startAlarm() {
+    public long getNextAlarm() {
+        return nextAlarm;
+    }
+
+    public void startAlarm(Context context) {
+        // Change next alarm time
+        nextAlarm += interval;
 
     }
 }
