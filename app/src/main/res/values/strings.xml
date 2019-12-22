@@ -6,4 +6,9 @@
 
     <string name="hintCaption">Caption</string>
     <string name="hintDescription">Description</string>
+
+    <string name="hintAlarmCaption">What it would be?</string>
+    <string name="hintAlarmLastDate">Last day it happened</string>
+    <string name="hintAlarmNextDate">Next day it will happens</string>
+    <string name="hintAlarmTime">At what time?</string>
 </resources>
