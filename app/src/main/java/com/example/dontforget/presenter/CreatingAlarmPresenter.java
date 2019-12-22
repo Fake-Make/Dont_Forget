@@ -1,6 +1,7 @@
 package com.example.dontforget.presenter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.TimePicker;
@@ -10,6 +11,7 @@ import com.example.dontforget.model.Alarm;
 import com.example.dontforget.model.Alarms;
 import com.example.dontforget.model.Card;
 import com.example.dontforget.model.Cards;
+import com.example.dontforget.services.ServiceAlarmNotifier;
 
 public class CreatingAlarmPresenter extends APresenter implements IPresenter {
     protected String caption;
@@ -64,6 +66,11 @@ public class CreatingAlarmPresenter extends APresenter implements IPresenter {
             tempCard.setAlarms(tempAlarms);
             // Rewrite
             cardsList.save();
+
+            // Start service
+            Intent intent = new Intent(parent, ServiceAlarmNotifier.class);
+            // TODO: Launch service
+            //parent.startService(intent);
         } catch (Exception e) {
             e.getStackTrace();
             return 3;
