@@ -1,6 +1,7 @@
 package com.example.dontforget;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -38,8 +39,7 @@ public class CardActivity extends AppCompatActivity {
         CardPresenter presenter = new CardPresenter(CardActivity.this, id);
         presenter.showCardInfo((TextView) findViewById(R.id.textViewCaption), (TextView) findViewById(R.id.textViewDescription));
         presenter.switchEmptinessMessage((TextView) findViewById(R.id.emptinessMessageAlarms));
-        // TODO: develop presenter.showCardAlarms() method
-        //presenter.showCardAlarms();
+        presenter.showAlarms((RecyclerView) findViewById(R.id.recyclerViewAlarmsList));
 
         // Set listener at add button
         findViewById(R.id.buttonAddAlarm).setOnClickListener(new View.OnClickListener() {
