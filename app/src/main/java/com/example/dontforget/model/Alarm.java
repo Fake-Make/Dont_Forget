@@ -48,4 +48,8 @@ public class Alarm implements IAlarm, IUniqueItem, Serializable {
     public void setId(long id) {
         this.id = id;
     }
+
+    public void startAlarm() {
+
+    }
 }
