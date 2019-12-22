@@ -56,15 +56,13 @@ public class CreatingAlarmPresenter extends APresenter implements IPresenter {
             // Take
             Card tempCard = cardsList.getById(id);
             // Change
-            Alarm tempAlarm = new Alarm(lastDate, nextDate, time);
-            tempAlarm.setCaption(caption);
+            Alarm tempAlarm = new Alarm(caption, lastDate, nextDate, time);
             Alarms<Alarm> tempAlarms = tempCard.getAlarms();
             if (null == tempAlarms || null == tempAlarms.getList())
                 tempAlarms = new Alarms<>();
             tempAlarms.add(tempAlarm);
             tempCard.setAlarms(tempAlarms);
             // Rewrite
-            //cardsList.updateById(id, tempCard);
             cardsList.save();
         } catch (Exception e) {
             e.getStackTrace();
