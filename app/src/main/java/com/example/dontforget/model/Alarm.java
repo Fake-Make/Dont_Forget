@@ -1,7 +1,11 @@
 package com.example.dontforget.model;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.Locale;
 
 public class Alarm implements IAlarm, IUniqueItem, Serializable {
     protected String caption;
@@ -9,18 +13,23 @@ public class Alarm implements IAlarm, IUniqueItem, Serializable {
     protected long nextAlarm, interval;
     protected long id;
 
-    public Alarm(long lastDate, long nextDate, long time) {
+    public Alarm(String caption, long lastDate, long nextDate, long time) {
+        // Get data
+        this.caption = caption;
         interval = nextDate - lastDate;
         nextAlarm = nextDate + time;
         id = System.currentTimeMillis();
+
+        // Fix nextAlarm if it has past time
+        long now = System.currentTimeMillis();
+        for (; nextAlarm < now; nextAlarm += interval);
+
+        // Starting service with notifications
+        startAlarm();
     }
 
     public String getCaption() {
         return caption;
-    }
-
-    public void setCaption(String caption) {
-        this.caption = caption;
     }
 
     @Override
