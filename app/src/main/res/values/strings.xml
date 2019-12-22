@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Don\'t Forget</string>
     <string name="buttonAdd">Add</string>
-    <string name="emptinessMessageText">There is nothing to show!\nYou can add item with button below.</string>
+    <string name="emptinessMessageTextCards">There is nothing to show!\nYou can add card with button below.</string>
+    <string name="emptinessMessageTextAlarms">There is nothing to show!\nYou can add alarm with button below.</string>
 
     <string name="hintCaption">Caption</string>
     <string name="hintDescription">Description</string>
