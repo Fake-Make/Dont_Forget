@@ -30,6 +30,10 @@ public class Card implements ICard, IUniqueItem, Serializable {
         return description;
     }
 
+    public void setAlarms(Alarms<Alarm> alarms) {
+        this.alarms = alarms;
+    }
+
     public Alarms<Alarm> getAlarms() {
         return alarms;
     }
