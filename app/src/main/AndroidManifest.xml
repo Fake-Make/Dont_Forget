@@ -9,18 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <service
+            android:name=".services.ServiceAlarmNotifier"
+            android:enabled="true"
+            android:exported="false"></service>
+
         <activity
             android:name=".CardActivity"
-            android:parentActivityName=".MainActivity"
-            />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".CreatingAlarmActivity"
-            android:parentActivityName=".CardActivity"
-            />
+            android:parentActivityName=".CardActivity" />
         <activity
             android:name=".CreatingCardActivity"
-            android:parentActivityName=".MainActivity"
-            />
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
