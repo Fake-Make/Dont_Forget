@@ -30,6 +30,10 @@ public class Card implements ICard, IUniqueItem, Serializable {
         return description;
     }
 
+    public Alarms<Alarm> getAlarms() {
+        return alarms;
+    }
+
     @Override
     public long getId() {
         return id;
