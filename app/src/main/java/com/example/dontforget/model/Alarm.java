@@ -28,6 +28,13 @@ public class Alarm implements IAlarm, IUniqueItem, Serializable {
         startAlarm();
     }
 
+    public String getDatetime() {
+        Calendar calendar = new GregorianCalendar();
+        DateFormat dateFormat = new SimpleDateFormat("MMM d, H:m");
+        calendar.setTimeInMillis(nextAlarm);
+        return dateFormat.format(calendar.getTime());
+    }
+
     public String getCaption() {
         return caption;
     }
