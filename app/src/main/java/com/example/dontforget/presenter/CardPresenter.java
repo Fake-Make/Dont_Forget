@@ -4,7 +4,12 @@ import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.dontforget.R;
+import com.example.dontforget.adapters.AlarmsListAdapter;
+import com.example.dontforget.adapters.CardsListAdapter;
 import com.example.dontforget.model.Alarm;
 import com.example.dontforget.model.Alarms;
 import com.example.dontforget.model.Card;
@@ -45,8 +50,14 @@ public class CardPresenter extends APresenter implements IPresenter {
             emptinessMessage.setVisibility(View.INVISIBLE);
     }
 
-    public void showCardAlarms() {
+    public void showAlarms(RecyclerView recyclerViewAlarmsList) {
+        recyclerViewAlarmsList.setHasFixedSize(true);
 
+        LinearLayoutManager layoutManager = new LinearLayoutManager(parent);
+        recyclerViewAlarmsList.setLayoutManager(layoutManager);
 
+        Alarms<Alarm> alarms = cardsList.getById(cardId).getAlarms();
+        if (null != alarms && null != alarms.getList())
+            recyclerViewAlarmsList.setAdapter(new AlarmsListAdapter(alarms.getList()));
     }
 }
