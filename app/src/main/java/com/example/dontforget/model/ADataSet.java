@@ -43,7 +43,7 @@ abstract public class ADataSet<T extends IUniqueItem> implements IDataSet<T> {
 
     @Override
     public boolean isEmpty() {
-        return 0 >= itemsList.size();
+        return null == itemsList || 0 >= itemsList.size();
     }
 
     @Override
