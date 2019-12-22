@@ -11,4 +11,6 @@
     <string name="hintAlarmLastDate">Last day it happened</string>
     <string name="hintAlarmNextDate">Next day it will happens</string>
     <string name="hintAlarmTime">At what time?</string>
+
+    <string name="hintNextAlarm">Next alarm:</string>
 </resources>
