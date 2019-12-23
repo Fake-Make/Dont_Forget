@@ -37,11 +37,11 @@
 
                 <CalendarView
                     android:id="@+id/calendarViewNextDate"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="32dp"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="32dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.494"
                     app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +60,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/timePickerAlarmTime" />
+                    app:layout_constraintTop_toBottomOf="@+id/calendarViewNextDate" />
 
                 <TextView
                     android:id="@+id/textViewAlarmCaption"
@@ -84,12 +84,12 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="32dp"
                     android:ems="10"
+                    android:importantForAutofill="no"
                     android:inputType="textPersonName"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textViewAlarmCaption"
-                    android:importantForAutofill="no" />
+                    app:layout_constraintTop_toBottomOf="@+id/textViewAlarmCaption" />
 
                 <TextView
                     android:id="@+id/textViewAlarmLastDate"
@@ -98,19 +98,21 @@
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="64dp"
                     android:layout_marginEnd="32dp"
+                    android:labelFor="@id/calendarViewLastDate"
                     android:text="@string/hintAlarmLastDate"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextAlarmCaption" />
+                    app:layout_constraintTop_toBottomOf="@+id/timePickerAlarmTime" />
 
                 <TextView
                     android:id="@+id/textViewAlarmNextDate"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="32dp"
                     android:layout_marginEnd="32dp"
+                    android:labelFor="@id/calendarViewNextDate"
                     android:text="@string/hintAlarmNextDate"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -124,21 +126,24 @@
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="64dp"
                     android:layout_marginEnd="32dp"
+                    android:labelFor="@id/timePickerAlarmTime"
                     android:text="@string/hintAlarmTime"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/calendarViewNextDate" />
+                    app:layout_constraintTop_toBottomOf="@+id/editTextAlarmCaption" />
 
                 <TimePicker
                     android:id="@+id/timePickerAlarmTime"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="24dp"
                     android:layout_marginEnd="32dp"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textViewAlarmTime" />
             </androidx.constraintlayout.widget.ConstraintLayout>
