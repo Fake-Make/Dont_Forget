@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dontforget.presenter.CardPresenter;
+import com.example.dontforget.presenter.MainPresenter;
 
 /**
  * Detailed card's page
@@ -50,5 +51,14 @@ public class CardActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Init view with required data
+        CardPresenter presenter = new CardPresenter(CardActivity.this, id);
+        presenter.switchEmptinessMessage((TextView) findViewById(R.id.emptinessMessageAlarms));
+        presenter.showAlarms((RecyclerView) findViewById(R.id.recyclerViewAlarmsList));
     }
 }
